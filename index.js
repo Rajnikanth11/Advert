@@ -1,7 +1,7 @@
 const express= require('express');
-
-const morgan=require('morgan');
 const app=express();
+const morgan=require('morgan');
+
 const port=4000;
 let count=0;
  
@@ -9,9 +9,9 @@ const mongoose=require('mongoose');
 
 
 
-const users=require('./routes/user');
-const products=require('./routes/products');
-const orders=require('./routes/orders');
+const users=require('./routes/users');
+const contentWriter=require('./routes/contentWriter');
+const company=require('./routes/company');
 const parser=require('body-parser');
 
   
@@ -65,8 +65,8 @@ app.use('*',function(req,res,next){
 
 
 app.use('/users',users);
-app.use('/products',products);
-app.use('/orders',orders);
+app.use('/contentWriter',contentWriter);
+app.use('/company',company);
 
 
 
